@@ -50,8 +50,7 @@ const Paste = () => {
   return (
     <div className="max-w-4xl mx-auto">
       <input
-        className="w-full p-3 rounded-xl mt-5 bg-gray-950 border border-gray-700 outline-none"
-        type="search"
+        className="w-full p-3 rounded-xl mt-5 bg-gray-950 border border-gray-700 outline-none text-sm sm:text-base"
         placeholder="Search your paste..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
@@ -62,16 +61,16 @@ const Paste = () => {
           filteredData.map((paste) => (
             <div
               key={paste._id}
-              className="border border-gray-700 rounded-xl p-5 bg-gray-900 shadow-md"
+              className="border border-gray-700 rounded-xl p-4 sm:p-5 bg-gray-900 shadow-md"
             >
-             <div className='flex flex-row gap-10 justify-between items-center'>
+             <div className='flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4'>
                {/* Title */}
-              <h2 className="text-3xl font-bold text-white mb-3">
+              <h2 className="text-xl sm:text-2xl font-bold text-white break-words">
                 {paste.title}
               </h2>
 
               {/* Icons Row */}
-              <div className="flex items-center gap-4 mb-4">
+              <div className="flex flex-wrap items-center gap-4">
                 <Link to={`/?pasteId=${paste._id}`}>
                   <FaEdit
                     size={18}
@@ -114,14 +113,14 @@ const Paste = () => {
               </div>
              </div>
 
-             <div className='flex flex-row gap-10 justify-between items-center'>
+             <div className='mt-4 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4'>
                {/* Content */}
-              <p className="text-gray-500 text-base mb-5 break-words">
+              <p className="text-gray-400 break-words flex-1">
                 {paste.content}
               </p>
 
               {/* Date */}
-              <div className="flex items-center gap-2 text-gray-400 text-sm">
+              <div className="flex items-center gap-2 text-gray-400 text-sm whitespace-nowrap">
                 <FaCalendarAlt />
                 <span>
                   {new Date(paste.createdAt).toLocaleDateString()}

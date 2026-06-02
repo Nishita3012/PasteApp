@@ -12,9 +12,9 @@ const ViewPaste = () => {
 
   return (
      <div>
-        <div className='flex flex-row gap-7 place-content-between'>
+        <div className='max-w-4xl mx-auto px-4 py-4'>
        <input 
-         className='p-1 rounded-2xl bg-gray-950 mt-2 w-[66%] pl-5'
+         className='w-full p-3 rounded-xl bg-gray-950 border border-gray-700 text-lg font-semibold'
          type="text"
          placeholder='Enter title here'
          value={paste.title}
@@ -22,17 +22,10 @@ const ViewPaste = () => {
          onChange={(e) => setTitle(e.target.value)} 
         />
 
-        {/* <button 
-           onClick={createPaste}
-           className='p-2 rounded-2xl bg-gray-950 mt-2'>
-            {
-                pasteId ? "Update My Paste" : "Create My Paste"
-            }
-        </button> */}
     </div>
     <div className='mt-8'>
         <textarea 
-           className='rounded-2xl mt-4 min-w-125 p-4 bg-gray-950'
+           className='w-full rounded-xl p-4 bg-gray-950 border border-gray-700 resize-none'
            value={paste.content}
            placeholder='enter content here'
            disabled

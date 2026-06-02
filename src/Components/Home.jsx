@@ -47,9 +47,9 @@ const Home = () => {
 
   return (
     <div>
-        <div className='flex flex-row gap-7 place-content-between'>
+        <div className='flex flex-col sm:flex-row gap-4 justify-between'>
        <input 
-         className='p-1 rounded-2xl bg-gray-950 mt-2 w-[66%] pl-5'
+         className='w-full sm:w-[70%] p-3 rounded-xl bg-gray-950'
          type="text"
          placeholder='Enter title here'
          value={title}
@@ -58,7 +58,7 @@ const Home = () => {
 
         <button 
            onClick={createPaste}
-           className='p-2 rounded-2xl bg-gray-950 mt-2'>
+           className='w-full sm:w-auto p-3 rounded-xl bg-gray-950"'>
             {
                 pasteId ? "Update My Paste" : "Create My Paste"
             }
@@ -66,7 +66,7 @@ const Home = () => {
     </div>
     <div className='mt-8'>
         <textarea 
-           className='rounded-2xl mt-4 min-w-125 p-4 bg-gray-950'
+           className='w-full rounded-xl mt-4 p-4 bg-gray-950'
            value={value}
            placeholder='enter content here'
            onChange={(e)=> setValue(e.target.value)}
